@@ -167,12 +167,79 @@ body {
   align-items: center;
   margin: 0;
   line-height: 1.1;
+  opacity: 0;
+  animation: fadeIn 1.8s ease-in-out forwards;
 }
 
 .title-line {
+  position: relative;
   color: var(--text-primary);
-  text-shadow: 0 0 30px var(--accent-green);
+  text-shadow: 0 0 10px var(--accent-green);
+  overflow: hidden;
+  animation: glowPulse 3s ease-in-out infinite;
 }
+
+/* Brilho que percorre as letras — agora mais leve e translúcido */
+.title-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%, /* era 0.9 → suavizado */
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  animation: shineMove 4s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: screen; /* mistura o brilho com o texto, sem pintar o fundo */
+}
+
+/* Brilho pulsante mais sutil */
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 8px var(--accent-green), 0 0 15px var(--accent-green);
+  }
+  50% {
+    text-shadow: 0 0 20px var(--accent-green), 0 0 40px var(--accent-green);
+  }
+  100% {
+    text-shadow: 0 0 8px var(--accent-green), 0 0 15px var(--accent-green);
+  }
+}
+
+/* --- Animações --- */
+
+/* Fade-in suave na entrada */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Brilho pulsante constante */
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 15px var(--accent-green), 0 0 30px var(--accent-green);
+  }
+  50% {
+    text-shadow: 0 0 30px var(--accent-green), 0 0 60px var(--accent-green);
+  }
+  100% {
+    text-shadow: 0 0 15px var(--accent-green), 0 0 30px var(--accent-green);
+  }
+}
+
+
 
 .title-accent {
     color: var(--accent-green);
@@ -690,16 +757,6 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-}
-
-/* Credits Section */
-.section-credits {
-    background: rgba(19, 16, 27, 0.435);
-    border: 1px solid var(--border-glow);
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: var(--shadow-glow);
-    backdrop-filter: blur(10px);
 }
 
 /* Address Footer */
