@@ -144,7 +144,7 @@ body {
 
 /* Vídeo */
 .video-container {
-  width: 90px;                  /* tamanho fixo ou ajustável */
+  width: 70px;                  /* tamanho fixo ou ajustável */
   height: auto;
   overflow: hidden;
   border-radius: 10px;
