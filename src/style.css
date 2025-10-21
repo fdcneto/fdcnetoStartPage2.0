@@ -7,8 +7,10 @@
 }
 
 :root {
-    --primary-bg: #1b0e3a; /* preto escuro */
-    --secondary-bg: #116358;  /* button color */
+    --primary-bg: #1b0e3a;
+    /* preto escuro */
+    --secondary-bg: #116358;
+    /* button color */
     --tertiary-bg: #2a2a2a;
     --accent-green: #00ff88;
     --neon-green: #39ff14;
@@ -47,7 +49,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
+    background:
         linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px),
         linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -55,8 +57,13 @@ body {
 }
 
 @keyframes gridMove {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(50px, 50px); }
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(50px, 50px);
+    }
 }
 
 .particles {
@@ -108,10 +115,13 @@ body {
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px) scale(1);
         opacity: 0.7;
     }
+
     50% {
         transform: translateY(-20px) scale(1.2);
         opacity: 1;
@@ -120,126 +130,135 @@ body {
 
 /* Main Container */
 .principal {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 /* Header */
 .header {
-  display: flex;                 /* Alinha itens na horizontal */
-  align-items: center;           /* Centraliza verticalmente */
-  justify-content: center;       /* Centraliza horizontalmente */
-  gap: 20px;                     /* Espaço entre vídeo e texto */
-  margin-bottom: 20px;
-  flex-wrap: wrap;               /* Permite quebrar linha em telas pequenas */
+    display: flex;
+    /* Alinha itens na horizontal */
+    align-items: center;
+    /* Centraliza verticalmente */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    gap: 20px;
+    /* Espaço entre vídeo e texto */
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    /* Permite quebrar linha em telas pequenas */
 }
 
 /* Vídeo */
 .video-container {
-  width: 70px;                  /* tamanho fixo ou ajustável */
-  height: auto;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 0 10px var(--accent-green);
+    width: 70px;
+    /* tamanho fixo ou ajustável */
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--accent-green);
 }
 
 .video-container video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Título */
 .main-title {
-  font-family: 'Orbitron', monospace;
-  font-weight: 900;
-  font-size: clamp(1.3rem, 6vw, 2.2rem);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  line-height: 1.1;
-  opacity: 0;
-  animation: fadeIn 1.8s ease-in-out forwards;
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: clamp(1.3rem, 6vw, 2.2rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    line-height: 1.1;
+    opacity: 0;
+    animation: fadeIn 1.8s ease-in-out forwards;
 }
 
 .title-line {
-  position: relative;
-  color: var(--text-primary);
-  text-shadow: 0 0 10px var(--accent-green);
-  overflow: hidden;
-  animation: glowPulse 3s ease-in-out infinite;
+    position: relative;
+    color: var(--text-primary);
+    text-shadow: 0 0 10px var(--accent-green);
+    overflow: hidden;
+    animation: glowPulse 3s ease-in-out infinite;
 }
 
 /* Brilho que percorre as letras — agora mais leve e translúcido */
 .title-line::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.2) 50%, /* era 0.9 → suavizado */
-    transparent 100%
-  );
-  transform: skewX(-25deg);
-  animation: shineMove 4s ease-in-out infinite;
-  pointer-events: none;
-  mix-blend-mode: screen; /* mistura o brilho com o texto, sem pintar o fundo */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.2) 50%,
+            /* era 0.9 → suavizado */
+            transparent 100%);
+    transform: skewX(-25deg);
+    animation: shineMove 4s ease-in-out infinite;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    /* mistura o brilho com o texto, sem pintar o fundo */
 }
 
 /* Brilho pulsante mais sutil */
 @keyframes glowPulse {
-  0% {
-    text-shadow: 0 0 8px var(--accent-green), 0 0 15px var(--accent-green);
-  }
-  50% {
-    text-shadow: 0 0 20px var(--accent-green), 0 0 40px var(--accent-green);
-  }
-  100% {
-    text-shadow: 0 0 8px var(--accent-green), 0 0 15px var(--accent-green);
-  }
+    0% {
+        text-shadow: 0 0 8px var(--accent-green), 0 0 15px var(--accent-green);
+    }
+
+    50% {
+        text-shadow: 0 0 20px var(--accent-green), 0 0 40px var(--accent-green);
+    }
+
+    100% {
+        text-shadow: 0 0 8px var(--accent-green), 0 0 15px var(--accent-green);
+    }
 }
 
 /* --- Animações --- */
 
 /* Fade-in suave na entrada */
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Brilho pulsante constante */
 @keyframes glowPulse {
-  0% {
-    text-shadow: 0 0 15px var(--accent-green), 0 0 30px var(--accent-green);
-  }
-  50% {
-    text-shadow: 0 0 30px var(--accent-green), 0 0 60px var(--accent-green);
-  }
-  100% {
-    text-shadow: 0 0 15px var(--accent-green), 0 0 30px var(--accent-green);
-  }
+    0% {
+        text-shadow: 0 0 15px var(--accent-green), 0 0 30px var(--accent-green);
+    }
+
+    50% {
+        text-shadow: 0 0 30px var(--accent-green), 0 0 60px var(--accent-green);
+    }
+
+    100% {
+        text-shadow: 0 0 15px var(--accent-green), 0 0 30px var(--accent-green);
+    }
 }
-
-
 
 .title-accent {
     color: var(--accent-green);
@@ -257,9 +276,12 @@ body {
 }
 
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         text-shadow: 0 0 40px var(--accent-green);
     }
+
     50% {
         text-shadow: 0 0 60px var(--accent-green), 0 0 80px var(--accent-green);
     }
@@ -276,7 +298,8 @@ body {
     text-transform: uppercase;
     letter-spacing: 3px;
     position: relative;
-    word-break: break-word; /* Quebra palavras longas se necessário */
+    word-break: break-word;
+    /* Quebra palavras longas se necessário */
     overflow-wrap: break-word;
 }
 
@@ -291,6 +314,83 @@ body {
     background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
     box-shadow: 0 0 10px var(--accent-green);
 }
+
+/* Google Serch Bar Section */
+.google-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 30px;
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  transition: box-shadow 0.3s ease;
+}
+
+/* ✨ Brilho suave ao focar */
+.google-search:focus-within {
+  box-shadow: 0 0 10px rgba(66, 133, 244, 0.6);
+}
+
+/* 🔍 Ícone da lupa */
+.google-search .icon {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* 🎞️ Animação do ícone ao focar */
+.google-search:focus-within .icon {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.google-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* 💡 Placeholder com efeito de digitação */
+.google-search input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  animation: typing 3s steps(25) infinite;
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 0; }
+}
+
+.google-search button {
+  background: #4285F4;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* 🎥 Efeito “pulse” suave no hover */
+.google-search button:hover {
+  background: #3367d6;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(66,133,244,0.6);
+}
+
 
 /* Development Section */
 .section-dev {
@@ -348,7 +448,7 @@ body {
 
 .neon-button:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 
+    box-shadow:
         0 10px 25px rgba(0, 0, 0, 0.3),
         0 0 30px var(--accent-green);
 }
@@ -359,8 +459,13 @@ body {
 }
 
 @keyframes borderGlow {
-    0% { background-position: 0% 0%; }
-    100% { background-position: 200% 200%; }
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 200% 200%;
+    }
 }
 
 .neon-button:active {
@@ -425,7 +530,7 @@ body {
 
 .media-card:hover {
     transform: translateY(-8px) rotateX(5deg);
-    box-shadow: 
+    box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.4),
         0 0 25px var(--accent-green);
     border-color: var(--accent-green);
@@ -571,7 +676,7 @@ body {
 .service-button:hover {
     transform: translateY(-8px) scale(1.05);
     border-color: var(--accent-green);
-    box-shadow: 
+    box-shadow:
         0 15px 30px rgba(0, 0, 0, 0.4),
         0 0 30px var(--accent-green);
 }
@@ -639,8 +744,13 @@ body {
 }
 
 @keyframes borderRotate {
-    0% { filter: hue-rotate(0deg); }
-    100% { filter: hue-rotate(360deg); }
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
 }
 
 .contact-card:hover {
@@ -714,34 +824,34 @@ body {
 .bank-button:hover {
     transform: translateY(-5px) scale(1.05);
     border-color: var(--accent-green);
-    box-shadow: 
+    box-shadow:
         0 10px 25px rgba(0, 0, 0, 0.4),
         0 0 25px var(--accent-green);
 }
 
 .bank-button.bradesco:hover {
-    box-shadow: 
+    box-shadow:
         0 10px 25px rgba(0, 0, 0, 0.4),
         0 0 25px #ff0000;
     border-color: #ff0000;
 }
 
 .bank-button.caixa:hover {
-    box-shadow: 
+    box-shadow:
         0 10px 25px rgba(0, 0, 0, 0.4),
         0 0 25px #4511ef;
     border-color: #4511ef;
 }
 
 .bank-button.santander:hover {
-    box-shadow: 
+    box-shadow:
         0 10px 25px rgba(0, 0, 0, 0.4),
         0 0 25px #ff0000;
     border-color: #ff0000;
 }
 
 .bank-button.itau:hover {
-    box-shadow: 
+    box-shadow:
         0 10px 25px rgba(0, 0, 0, 0.4),
         0 0 25px #ff6200;
     border-color: #ff6200;
@@ -795,15 +905,15 @@ body {
         padding: 15px;
         gap: 25px;
     }
-    
+
     .button-grid {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
-    
+
     .media-grid {
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     }
-    
+
     .services-grid {
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     }
@@ -813,61 +923,67 @@ body {
     .principal {
         padding: 10px;
         gap: 20px;
+
         .section-title {
-        letter-spacing: 1px; /* Reduz de 3px para 1px */
-        font-size: clamp(1.2rem, 5vw, 1.8rem); /* Opcional: ajusta o tamanho */
+            letter-spacing: 1px;
+            /* Reduz de 3px para 1px */
+            font-size: clamp(1.2rem, 5vw, 1.8rem);
+            /* Opcional: ajusta o tamanho */
+        }
     }
-}
 
-@media (max-width: 768px) {
-    .section-dev,
-    .section-media,
-    .section-services,
-    .section-contacts,
-    .section-banking {
-        padding: 20px 15px; /* Reduz o padding lateral */
-    }
-}
+    @media (max-width: 768px) {
 
-@media (max-width: 480px) {
-    /* ... código existente ... */
-    
-    .section-title {
-        letter-spacing: 0.5px; /* Ainda mais reduzido */
-        font-size: clamp(1rem, 6vw, 1.5rem);
-        margin-bottom: 20px;
+        .section-dev,
+        .section-media,
+        .section-services,
+        .section-contacts,
+        .section-banking {
+            padding: 20px 15px;
+            /* Reduz o padding lateral */
+        }
     }
-}
-    
+
+    @media (max-width: 480px) {
+        /* ... código existente ... */
+
+        .section-title {
+            letter-spacing: 0.5px;
+            /* Ainda mais reduzido */
+            font-size: clamp(1rem, 6vw, 1.5rem);
+            margin-bottom: 20px;
+        }
+    }
+
     .button-grid {
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
         gap: 15px;
     }
-    
+
     .media-grid {
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
         gap: 15px;
     }
-    
+
     .services-grid {
         grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
         gap: 15px;
     }
-    
+
     .contacts-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .banking-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
-    
+
     .link-row {
         gap: 15px;
     }
-    
+
     .cyber-link {
         font-size: 12px;
         padding: 6px 12px;
@@ -878,20 +994,20 @@ body {
     .button-grid {
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     }
-    
+
     .services-grid {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
-    
+
     .banking-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .link-row {
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .address-content {
         flex-direction: column;
         gap: 10px;
@@ -920,9 +1036,12 @@ body {
 
 /* Special Effects */
 @keyframes glow {
-    0%, 100% {
+
+    0%,
+    100% {
         text-shadow: 0 0 20px var(--accent-green);
     }
+
     50% {
         text-shadow: 0 0 30px var(--neon-green), 0 0 40px var(--neon-green);
     }
@@ -934,6 +1053,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
