@@ -316,6 +316,7 @@ body {
 }
 
 /* Google Serch Bar Section */
+
 .google-search {
   display: flex;
   justify-content: center;
@@ -325,35 +326,36 @@ body {
   backdrop-filter: blur(8px);
   border-radius: 30px;
   padding: 10px 20px;
-  width: 90%;             /* ocupa 90% da tela */
+  width: 90%;             /* largura relativa à tela */
   max-width: 500px;       /* limite máximo em telas grandes */
+  min-width: 250px;       /* garante que a barra nunca fique muito estreita */
   margin: 20px auto;
   transition: box-shadow 0.3s ease;
   box-sizing: border-box; /* evita overflow por padding */
   flex-wrap: wrap;        /* permite quebrar linha em telas pequenas */
 }
 
-/* ✨ Brilho suave ao focar */
+/* Brilho suave ao focar */
 .google-search:focus-within {
   box-shadow: 0 0 10px rgba(66, 133, 244, 0.6);
 }
 
-/* 🔍 Ícone da lupa */
+/* Ícone da lupa */
 .google-search .icon {
   font-size: 18px;
   color: rgba(255, 255, 255, 0.8);
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* 🎞️ Animação do ícone ao focar */
+/* Animação do ícone ao focar */
 .google-search:focus-within .icon {
   color: #fff;
   transform: scale(1.1);
 }
 
 .google-search input {
-  flex: 1 1 150px;  /* input cresce, mas pode encolher até 150px */
-  min-width: 0;      /* evita overflow */
+  flex: 1 1 150px;   /* cresce, mas não encolhe abaixo de 150px */
+  min-width: 120px;  /* tamanho mínimo seguro do input */
   border: none;
   outline: none;
   background: transparent;
@@ -361,7 +363,7 @@ body {
   font-size: 16px;
 }
 
-/* 💡 Placeholder com efeito de digitação */
+/* Placeholder com efeito de digitação */
 .google-search input::placeholder {
   color: rgba(255, 255, 255, 0.6);
   overflow: hidden;
@@ -377,7 +379,7 @@ body {
 }
 
 .google-search button {
-  flex: 0 0 auto;    /* mantém tamanho do botão */
+  flex: 0 0 auto;     /* mantém tamanho do botão */
   background: #4285F4;
   color: white;
   border: none;
@@ -388,7 +390,7 @@ body {
   transition: all 0.3s ease;
 }
 
-/* 🎥 Efeito “pulse” suave no hover */
+/* Efeito hover */
 .google-search button:hover {
   background: #3367d6;
   transform: scale(1.05);
@@ -401,10 +403,12 @@ body {
     width: 95%;
     padding: 10px 15px;
     margin: 15px auto;
+    min-width: 200px;  /* barra mínima no mobile */
   }
 
   .google-search input {
     font-size: 16px;
+    min-width: 100px;  /* input nunca muito estreito */
   }
 
   .google-search button {
