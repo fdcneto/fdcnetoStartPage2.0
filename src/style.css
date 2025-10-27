@@ -292,7 +292,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column; /* lista vertical */
-  gap: 3px; /* espaço entre links */
+  gap: 0px; /* espaço entre links */
 }
 
 .cursos-list li a {
@@ -308,7 +308,7 @@ body {
 
 /* Highlight neon verde ao passar o mouse */
 .cursos-list li a:hover {
-  color: #00ff88;
+  color: #70f364;
   text-shadow: 0 0 6px #00ff88, 0 0 10px #00ff88;
 }
 
@@ -362,11 +362,7 @@ body {
     left: -75%;
     width: 50%;
     height: 100%;
-    background: linear-gradient(120deg,
-            transparent 0%,
-            rgba(255, 255, 255, 0.2) 50%,
-            /* era 0.9 → suavizado */
-            transparent 100%);
+    
     transform: skewX(-25deg);
     animation: shineMove 4s ease-in-out infinite;
     pointer-events: none;
